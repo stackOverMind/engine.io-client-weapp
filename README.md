@@ -1,4 +1,6 @@
 
+# 需要重写
+
 # Engine.IO client
 
 [![Build Status](https://secure.travis-ci.org/socketio/engine.io-client.svg)](http://travis-ci.org/socketio/engine.io-client)
