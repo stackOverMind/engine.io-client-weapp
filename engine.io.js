@@ -1,14 +1,5 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["eio"] = factory();
-	else
-		root["eio"] = factory();
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -941,7 +932,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    opts.headers = this.extraHeaders;
 	  }
 
-	  this.ws = BrowserWebSocket ? new WebSocket(uri) : new WebSocket(uri, protocols, opts);
+	  this.ws = new WebSocket(uri);
 
 	  if (this.ws.binaryType === undefined) {
 	    this.supportsBinary = false;
@@ -5035,6 +5026,4 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }
-/******/ ])
-});
-;
+/******/ ]);

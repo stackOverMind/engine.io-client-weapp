@@ -1,10 +1,11 @@
 
 var webpack = require('webpack')
 module.exports = {
-  entry: './index.js',
+  entry: './test.js',
+  //global:true,
   output: {
-    filename: 'engine.io.js',
-    library: 'eio',
+    filename: 'test.js',
+    library: 'test',
     libraryTarget: 'commonjs2'
   },
   module: {
@@ -16,7 +17,7 @@ module.exports = {
         presets: ['es2015']
       }
     }]
-  }
+  },
 };
 
 
