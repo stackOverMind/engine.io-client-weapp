@@ -3309,6 +3309,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = {
 	  WebSocket:_WebSocket
 	}
+	if(navigator == null){
+	  navigator = {}
+	  navigator.userAgent = 'WeApp'
+	}
+
 
 
 
