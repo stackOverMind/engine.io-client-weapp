@@ -88,7 +88,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var transports = __webpack_require__(3);
 	var Emitter = __webpack_require__(16);
-	//var debug = require('debug')('engine.io-client:socket');
+	var debug = __webpack_require__(20)('engine.io-client:socket');
 	var index = __webpack_require__(31);
 	var parser = __webpack_require__(6);
 	var parseuri = __webpack_require__(32);
@@ -1307,7 +1307,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var utf8 = __webpack_require__(12);
 
 	var base64encoder;
-	if (global.ArrayBuffer) {
+	if (global&&global.ArrayBuffer) {
 	  base64encoder = __webpack_require__(14);
 	}
 
