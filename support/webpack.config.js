@@ -5,8 +5,7 @@ module.exports = {
   output: {
     filename: 'engine.io.js',
     library: 'eio',
-    libraryTarget: 'commonjs2',
-    target:'webworker'
+    libraryTarget: 'umd'
   },
   node:{
     global:false
