@@ -57,6 +57,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	module.exports = __webpack_require__(1);
+	global['eio'] = module.exports;
 
 /***/ },
 /* 1 */
