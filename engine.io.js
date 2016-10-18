@@ -1001,31 +1001,13 @@ module.exports =
 	  for (var i = 0, l = total; i < l; i++) {
 	    (function (packet) {
 	      parser.encodePacket(packet, self.supportsBinary, function (data) {
-	        if (!BrowserWebSocket) {
-	          // always create a new object (GH-437)
-	          var opts = {};
-	          if (packet.options) {
-	            opts.compress = packet.options.compress;
-	          }
-
-	          if (self.perMessageDeflate) {
-	            var len = 'string' === typeof data ? global.Buffer.byteLength(data) : data.length;
-	            if (len < self.perMessageDeflate.threshold) {
-	              opts.compress = false;
-	            }
-	          }
-	        }
 
 	        // Sometimes the websocket has already been closed but the browser didn't
 	        // have a chance of informing us about it yet, in that case send will
 	        // throw an error
 	        try {
-	          if (BrowserWebSocket) {
-	            // TypeError is thrown when passing the second argument on Safari
-	            self.ws.send(data);
-	          } else {
-	            self.ws.send(data, opts);
-	          }
+	          // TypeError is thrown when passing the second argument on Safari
+	          self.ws.send(data);
 	        } catch (e) {
 	          debug('websocket closed before onclose event');
 	        }
